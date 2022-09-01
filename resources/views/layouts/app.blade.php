@@ -17,13 +17,16 @@
     <link href="{{ asset('assets/css/nucleo-svg.css') }}" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('assets/css/soft-ui-dashboard.css') }}" rel="stylesheet" />
+    <livewire:styles />
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
 
     <x-sidebar/>
 
-    @yield('content')
+    {{ $slot }}
+
+    <livewire:scripts />
 
     <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
