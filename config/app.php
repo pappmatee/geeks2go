@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         App\Providers\FortifyServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
@@ -178,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Nip\Feed\Providers\FeedServiceProvider::class,
+        Nip\Category\Providers\CategoriesServiceProvider::class,
 
     ],
 
