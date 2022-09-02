@@ -20,7 +20,7 @@
     <livewire:styles />
 </head>
 
-<body class="g-sidenav-show  bg-gray-100">
+<body class="container g-sidenav-show  bg-gray-100">
 
     <x-sidebar/>
 

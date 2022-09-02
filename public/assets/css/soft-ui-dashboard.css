@@ -20917,7 +20917,7 @@ hr.horizontal.gray-light {
 }
 
 .navbar-vertical.navbar-expand-xs.fixed-start {
-  left: 0;
+  /*left: 0;*/
 }
 
 .navbar-vertical.navbar-expand-xs.fixed-end {
