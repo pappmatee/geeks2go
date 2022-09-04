@@ -22,7 +22,7 @@
 
 <body class="container g-sidenav-show  bg-gray-100">
 
-    <x-sidebar/>
+    <livewire:core-feed-sidebar/>
 
     {{ $slot }}
 

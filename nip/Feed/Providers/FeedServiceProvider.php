@@ -4,6 +4,9 @@ namespace Nip\Feed\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
+use Nip\Feed\Livewire\CreatePostForm;
+use Nip\Feed\Livewire\Posts;
+use Nip\Feed\Livewire\Sidebar;
 
 class FeedServiceProvider extends ServiceProvider
 {
@@ -12,7 +15,9 @@ class FeedServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        /*Livewire::component('core-profile-card', ProfileCard::class);*/
+        Livewire::component('core-feed-sidebar', Sidebar::class);
+        Livewire::component('core-feed-posts', Posts::class);
+        Livewire::component('core-feed-create-post-form', CreatePostForm::class);
     }
 
     /**
