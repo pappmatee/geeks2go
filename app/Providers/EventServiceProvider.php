@@ -6,6 +6,12 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Nip\Feed\Models\Article;
+use Nip\Feed\Models\Image;
+use Nip\Feed\Models\Video;
+use Nip\Feed\Observers\ArticleObserver;
+use Nip\Feed\Observers\ImageObserver;
+use Nip\Feed\Observers\VideoObserver;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -27,6 +33,8 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Article::observe(ArticleObserver::class);
+        Image::observe(ImageObserver::class);
+        Video::observe(VideoObserver::class);
     }
 }
