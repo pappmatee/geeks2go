@@ -4,7 +4,39 @@
     <!-- End Navbar -->
 
     <div class="container-fluid py-4">
-        <div class="row">
+        @foreach($this->posts as $post)
+            @if($post->contentable_type === \Nip\Feed\Models\Article::class)
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card mb-4">
+                            <div class="card-body p-3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card card-blog card-plain">
+                                            <div class="card-body px-1 py-0">
+                                                @dd($post->contentable->categories)
+                                                <p class="text-gradient text-dark mb-2 text-sm"></p>
+                                                <a href="javascript:;">
+                                                    <h5>
+                                                        {{ $post->contentable->title }}
+                                                    </h5>
+                                                </a>
+                                                <p class="mb-4 text-sm">
+                                                    {{ $post->contentable->body }}
+                                                </p>
+                                                <div class="d-flex align-items-start">
+                                                    <button type="button" class="btn btn-outline-primary btn-sm mb-0">View Post</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+            <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-body p-3">
@@ -37,6 +69,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
