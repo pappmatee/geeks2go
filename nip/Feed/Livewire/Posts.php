@@ -7,6 +7,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 use Nip\Category\Models\Category;
+use Nip\Feed\Models\Feed;
 
 class Posts extends Component
 {
@@ -14,8 +15,7 @@ class Posts extends Component
 
     public function getPostsProperty()
     {
-        return Category::query()
-            ->with('parent', 'subCategories')
+        return Feed::query()
             ->get();
     }
 
