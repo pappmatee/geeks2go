@@ -12,7 +12,7 @@ class Feed extends Model
 
     protected $fillable = ['contentable_type', 'contentable_id'];
 
-    public function articles(): MorphTo
+    public function contentable(): MorphTo
     {
         return $this->morphTo();
     }

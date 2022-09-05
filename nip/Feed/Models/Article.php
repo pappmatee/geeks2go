@@ -5,6 +5,8 @@ namespace Nip\Feed\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Nip\Category\Models\Category;
+use Nip\Category\Models\CategoryContent;
 use Nip\Profile\Models\User;
 
 class Article extends Model
@@ -18,8 +20,9 @@ class Article extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function feed()
+    public function categories()
     {
-        return $this->morphMany(Feed::class, 'contentable');
+        return $this->hasManyThrough(Category::class, CategoryContent::class, 'category_id', 'id');
+        /*return $this->morphMany(CategoryContent::class, 'contentable');*/
     }
 }
