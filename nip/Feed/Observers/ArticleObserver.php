@@ -7,7 +7,6 @@ use Nip\Feed\Models\Feed;
 
 class ArticleObserver
 {
-
     public function created(Article $article)
     {
         Feed::create([

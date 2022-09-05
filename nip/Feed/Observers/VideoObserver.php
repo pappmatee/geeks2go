@@ -2,61 +2,20 @@
 
 namespace Nip\Feed\Observers;
 
+use Nip\Feed\Models\Feed;
 use Nip\Feed\Models\Video;
 
 class VideoObserver
 {
-    /**
-     * Handle the Video "created" event.
-     *
-     * @param  \App\Models\Video  $video
-     * @return void
-     */
     public function created(Video $video)
     {
-        //
+        Feed::create([
+            'contentable_type' => Video::class,
+            'contentable_id' => $video->id,
+        ]);
     }
 
-    /**
-     * Handle the Video "updated" event.
-     *
-     * @param  \App\Models\Video  $video
-     * @return void
-     */
-    public function updated(Video $video)
-    {
-        //
-    }
-
-    /**
-     * Handle the Video "deleted" event.
-     *
-     * @param  \App\Models\Video  $video
-     * @return void
-     */
     public function deleted(Video $video)
-    {
-        //
-    }
-
-    /**
-     * Handle the Video "restored" event.
-     *
-     * @param  \App\Models\Video  $video
-     * @return void
-     */
-    public function restored(Video $video)
-    {
-        //
-    }
-
-    /**
-     * Handle the Video "force deleted" event.
-     *
-     * @param  \App\Models\Video  $video
-     * @return void
-     */
-    public function forceDeleted(Video $video)
     {
         //
     }
