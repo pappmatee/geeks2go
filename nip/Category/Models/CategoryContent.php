@@ -12,4 +12,14 @@ class CategoryContent extends Model
     protected $table = 'category_content';
 
     protected $fillable = ['category_id', 'contentable_type', 'contentable_id'];
+
+    public function contentable()
+    {
+        return $this->morphTo();
+    }
+
+    public function category()
+    {
+        return $this->hasMany(Category::class, 'category_id', 'id');
+    }
 }
