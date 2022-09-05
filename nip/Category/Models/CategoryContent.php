@@ -10,4 +10,6 @@ class CategoryContent extends Model
     use HasFactory;
 
     protected $table = 'category_content';
+
+    protected $fillable = ['category_id', 'contentable_type', 'contentable_id'];
 }

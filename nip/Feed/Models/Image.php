@@ -11,6 +11,8 @@ class Image extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['user_id', 'title', 'path'];
+
     public function publisher(): BelongsTo
     {
         return $this->belongsTo(User::class);

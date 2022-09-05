@@ -11,8 +11,15 @@ class Article extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['user_id', 'title', 'body'];
+
     public function publisher(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function feed()
+    {
+        return $this->morphMany(Feed::class, 'contentable');
     }
 }

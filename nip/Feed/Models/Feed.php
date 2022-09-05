@@ -10,7 +10,9 @@ class Feed extends Model
 {
     use HasFactory;
 
-    public function contentable(): MorphTo
+    protected $fillable = ['contentable_type', 'contentable_id'];
+
+    public function articles(): MorphTo
     {
         return $this->morphTo();
     }
